@@ -20,7 +20,6 @@ void no_interrupt_handler (void) {};
 
 function_ptr_t g_ext_interrupt_handlers[PLIC_NUM_INTERRUPTS];
 
-
 // Instance data for the PLIC.
 
 plic_instance_t g_plic;
