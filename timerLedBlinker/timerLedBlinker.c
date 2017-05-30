@@ -10,8 +10,6 @@
 #include <unistd.h>
 #include "stdatomic.h"
 
-void reset_demo (void);
-
 // Structures for registering different interrupt handlers
 // for different parts of the application.
 typedef void (*function_ptr_t) (void);
@@ -23,14 +21,11 @@ volatile uint64_t * mtime       = (uint64_t*) (CLINT_CTRL_ADDR + CLINT_MTIME);
 
 /*Entry Point for Machine Timer Interrupt Handler*/
 void handle_m_time_interrupt(){
-  clear_csr(mie, MIP_MTIP);	// clear timer interrupt
   // set next timer compare to half a second from its previous value
   *mtimecmp += RTC_FREQ/2;
   // toggle blue LED state
   GPIO_REG(GPIO_OUTPUT_VAL) ^= 1 << BLUE_LED_OFFSET;
-  set_csr(mie, MIP_MTIP);	// re-enable timer interrupt.
 }
-
 
 void boardInit(){
 	// set blue LED pin as output and turn it on
