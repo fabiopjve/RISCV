@@ -21,10 +21,10 @@ volatile uint64_t * mtime       = (uint64_t*) (CLINT_CTRL_ADDR + CLINT_MTIME);
 
 /*Entry Point for Machine Timer Interrupt Handler*/
 void handle_m_time_interrupt(){
-  // set next timer compare to half a second from its previous value
-  *mtimecmp += RTC_FREQ/2;
-  // toggle blue LED state
-  GPIO_REG(GPIO_OUTPUT_VAL) ^= 1 << BLUE_LED_OFFSET;
+	// set next timer compare to half a second from its previous value
+	*mtimecmp += RTC_FREQ/2;
+	// toggle blue LED state
+	GPIO_REG(GPIO_OUTPUT_VAL) ^= 1 << BLUE_LED_OFFSET;
 }
 
 void boardInit(){
@@ -42,7 +42,7 @@ void boardInit(){
 
 void main(void)
 {
-  boardInit();
-  while (1){
-  }
+	boardInit();
+	while (1){
+	}
 }
