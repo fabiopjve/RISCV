@@ -28,10 +28,10 @@
 							<builder buildPath="${workspace_loc:/hello}/Debug" id="org.eclipse.cdt.cross.riscv.gnu.linux.elf.builder.debug.1284899433" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="GNU Make Builder for RISC-V" superClass="org.eclipse.cdt.cross.riscv.gnu.linux.elf.builder.debug"/>
 							<tool command="/home/fabiop/RISCV/FreedomStudio/bin/riscv64-unknown-elf-gcc" id="org.eclipse.cdt.cross.riscv.gnu.linux.elf.assembler.debug.2136801255" name="RISC-V GCC/Newlib Assembler" superClass="org.eclipse.cdt.cross.riscv.gnu.linux.elf.assembler.debug">
 								<option id="org.eclipse.cdt.cross.riscv.gnu.assembler.option.include.paths.662514382" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.riscv.gnu.assembler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/env/freedom-e300-hifive1}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/env}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/drivers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/env/freedom-e300-hifive1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/env}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/drivers}&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.riscv.gnu.assembler.option.preprocessor.def.2027450665" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.riscv.gnu.assembler.option.preprocessor.def" useByScannerDiscovery="false"/>
 								<inputType id="org.eclipse.cdt.cross.riscv.gnu.linux.assembler.base.input.1388230464" superClass="org.eclipse.cdt.cross.riscv.gnu.linux.assembler.base.input"/>
@@ -39,10 +39,10 @@
 							<tool command="/home/fabiop/RISCV/FreedomStudio/bin/riscv64-unknown-elf-gcc" id="org.eclipse.cdt.cross.riscv.gnu.linux.elf.c.compiler.debug.1126128967" name="RISC-V GCC/Newlib C Compiler" superClass="org.eclipse.cdt.cross.riscv.gnu.linux.elf.c.compiler.debug">
 								<option id="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.optimization.level.2008456434" name="Optimization level" superClass="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.optimization.level" useByScannerDiscovery="false" value="org.eclipse.cdt.cross.riscv.gnu.base.option.optimization.level.O3" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.include.paths.845925242" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/env/freedom-e300-hifive1}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/env}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/hello/bsp/drivers}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/env/freedom-e300-hifive1}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/env}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/bsp/drivers}&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.other.otherflags.180774102" name="Other flags" superClass="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.other.otherflags" useByScannerDiscovery="false" value="-c -fno-builtin-printf -include sys/cdefs.h" valueType="string"/>
 								<option id="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.preprocessor.def.1810971598" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.riscv.gnu.c.compiler.option.preprocessor.def" useByScannerDiscovery="false"/>
