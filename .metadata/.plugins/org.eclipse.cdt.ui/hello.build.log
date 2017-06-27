@@ -1,0 +1,11 @@
+07:39:58 **** Incremental Build of configuration Debug for project hello ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "hello.elf"
+   text	   data	    bss	    dec	    hex	filename
+  52922	   2512	   2112	  57546	   e0ca	hello.elf
+Finished building: hello.siz
+ 
+
+07:39:58 Build Finished (took 69ms)
+

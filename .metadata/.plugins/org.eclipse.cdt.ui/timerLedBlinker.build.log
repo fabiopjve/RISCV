@@ -1,0 +1,50 @@
+07:46:45 **** Incremental Build of configuration Debug for project timerLedBlinker ****
+make all 
+Building file: ../bsp/env/freedom-e300-hifive1/init.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -O2  -g3 -DUSE_M_TIME -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/drivers" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env/freedom-e300-hifive1" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/include" -std=gnu11 -include sys/cdefs.h -fno-builtin-printf -c -MMD -MP -MF"bsp/env/freedom-e300-hifive1/init.d" -MT"bsp/env/freedom-e300-hifive1/init.o" -c -o "bsp/env/freedom-e300-hifive1/init.o" "../bsp/env/freedom-e300-hifive1/init.c"
+Finished building: ../bsp/env/freedom-e300-hifive1/init.c
+ 
+Building file: ../bsp/env/entry.S
+Invoking: GNU RISC-V Cross Assembler
+riscv64-unknown-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -O2  -g3 -x assembler-with-cpp -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/include" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env/freedom-e300-hifive1" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/drivers" -c -MMD -MP -MF"bsp/env/entry.d" -MT"bsp/env/entry.o" -c -o "bsp/env/entry.o" "../bsp/env/entry.S"
+Finished building: ../bsp/env/entry.S
+ 
+Building file: ../bsp/env/start.S
+Invoking: GNU RISC-V Cross Assembler
+riscv64-unknown-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -O2  -g3 -x assembler-with-cpp -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/include" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env/freedom-e300-hifive1" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/drivers" -c -MMD -MP -MF"bsp/env/start.d" -MT"bsp/env/start.o" -c -o "bsp/env/start.o" "../bsp/env/start.S"
+Finished building: ../bsp/env/start.S
+ 
+Building file: ../bsp/drivers/plic/plic_driver.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -O2  -g3 -DUSE_M_TIME -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/drivers" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env/freedom-e300-hifive1" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/include" -std=gnu11 -include sys/cdefs.h -fno-builtin-printf -c -MMD -MP -MF"bsp/drivers/plic/plic_driver.d" -MT"bsp/drivers/plic/plic_driver.o" -c -o "bsp/drivers/plic/plic_driver.o" "../bsp/drivers/plic/plic_driver.c"
+Finished building: ../bsp/drivers/plic/plic_driver.c
+ 
+Building file: ../bsp/drivers/fe300prci/fe300prci_driver.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -O2  -g3 -DUSE_M_TIME -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/drivers" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env/freedom-e300-hifive1" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/include" -std=gnu11 -include sys/cdefs.h -fno-builtin-printf -c -MMD -MP -MF"bsp/drivers/fe300prci/fe300prci_driver.d" -MT"bsp/drivers/fe300prci/fe300prci_driver.o" -c -o "bsp/drivers/fe300prci/fe300prci_driver.o" "../bsp/drivers/fe300prci/fe300prci_driver.c"
+Finished building: ../bsp/drivers/fe300prci/fe300prci_driver.c
+ 
+Building file: ../timerLedBlinker.c
+Invoking: GNU RISC-V Cross C Compiler
+riscv64-unknown-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -O2  -g3 -DUSE_M_TIME -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/drivers" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env/freedom-e300-hifive1" -I"/home/fabiop/Development/RISCV/timerLedBlinker/bsp/include" -std=gnu11 -include sys/cdefs.h -fno-builtin-printf -c -MMD -MP -MF"timerLedBlinker.d" -MT"timerLedBlinker.o" -c -o "timerLedBlinker.o" "../timerLedBlinker.c"
+Finished building: ../timerLedBlinker.c
+ 
+Building target: timerLedBlinker.elf
+Invoking: GNU RISC-V Cross C Linker
+riscv64-unknown-elf-gcc -march=rv32imac -mabi=ilp32 -mcmodel=medany -msmall-data-limit=8 -O2  -g3 -T "/home/fabiop/Development/RISCV/timerLedBlinker/bsp/env/freedom-e300-hifive1/flash.lds" -nostartfiles -L../../wrap-hifive1/Debug -L../ -Wl,-Map,"timerLedBlinker.map" -Wl,--start-group -Wl,--end-group -Wl,--wrap=malloc -Wl,--wrap=free -Wl,--wrap=open -Wl,--wrap=lseek -Wl,--wrap=read -Wl,--wrap=write -Wl,--wrap=fstat -Wl,--wrap=stat -Wl,--wrap=close -Wl,--wrap=link -Wl,--wrap=unlink -Wl,--wrap=execve -Wl,--wrap=fork -Wl,--wrap=getpid -Wl,--wrap=kill -Wl,--wrap=wait -Wl,--wrap=isatty -Wl,--wrap=times -Wl,--wrap=sbrk -Wl,--wrap=_exit -o "timerLedBlinker.elf"  ./bsp/env/freedom-e300-hifive1/init.o  ./bsp/env/entry.o ./bsp/env/start.o  ./bsp/drivers/plic/plic_driver.o  ./bsp/drivers/fe300prci/fe300prci_driver.o  ./timerLedBlinker.o   -lc -lwrap-hifive1
+Finished building target: timerLedBlinker.elf
+ 
+Invoking: GNU RISC-V Cross Create Flash Image
+riscv64-unknown-elf-objcopy -O ihex "timerLedBlinker.elf"  "timerLedBlinker.hex"
+Finished building: timerLedBlinker.hex
+ 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "timerLedBlinker.elf"
+   text	   data	    bss	    dec	    hex	filename
+   4446	   1080	   2052	   7578	   1d9a	timerLedBlinker.elf
+Finished building: timerLedBlinker.siz
+ 
+
+07:46:46 Build Finished (took 537ms)
+

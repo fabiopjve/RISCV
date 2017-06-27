@@ -1,0 +1,11 @@
+07:34:42 **** Incremental Build of configuration Debug for project pwmLedBlinker ****
+make all 
+Invoking: GNU RISC-V Cross Print Size
+riscv64-unknown-elf-size --format=berkeley "pwmLedBlinker.elf"
+   text	   data	    bss	    dec	    hex	filename
+  53178	   2512	   2336	  58026	   e2aa	pwmLedBlinker.elf
+Finished building: pwmLedBlinker.siz
+ 
+
+07:34:42 Build Finished (took 72ms)
+
