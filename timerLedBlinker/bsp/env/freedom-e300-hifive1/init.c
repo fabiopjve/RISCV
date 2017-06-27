@@ -1,10 +1,12 @@
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 #include "platform.h"
 #include "encoding.h"
 
+extern int main(int argc, char** argv);
 extern void trap_entry();
 
 static unsigned long mtime_lo(void)
@@ -215,6 +217,7 @@ uintptr_t handle_trap(uintptr_t mcause, uintptr_t epc)
 
 void _init()
 {
+  
   #ifndef NO_INIT
   use_default_clocks();
   use_pll(0, 0, 1, 31, 1);

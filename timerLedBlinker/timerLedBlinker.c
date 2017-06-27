@@ -1,4 +1,12 @@
-// See LICENSE for license details.
+/*
+ * timerLedBlinker.c
+ *
+ * Author: Fábio Pereira
+ * Date  : 2017-06-01
+ *
+ * This program blinks the blue LED on HiFive board using the machine timer
+ * (2 interrupts per second)
+ */
 
 #include <stdio.h>
 #include <stdlib.h>

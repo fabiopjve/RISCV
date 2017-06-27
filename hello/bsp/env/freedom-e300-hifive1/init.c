@@ -142,7 +142,7 @@ static unsigned long __attribute__((noinline)) measure_cpu_freq(size_t n)
   unsigned long start_mtime, delta_mtime;
   unsigned long mtime_freq = get_timer_freq();
 
-  // Don't start measuruing until we see an mtime tick
+  // Don't start measuring until we see an mtime tick
   unsigned long tmp = mtime_lo();
   do {
     start_mtime = mtime_lo();

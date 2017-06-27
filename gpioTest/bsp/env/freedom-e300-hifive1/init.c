@@ -1,10 +1,12 @@
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 #include "platform.h"
 #include "encoding.h"
 
+extern int main(int argc, char** argv);
 extern void trap_entry();
 
 static unsigned long mtime_lo(void)
