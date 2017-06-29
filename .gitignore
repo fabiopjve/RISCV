@@ -1,0 +1,6 @@
+/Debug/
+/.metadata/
+*.o
+*.elf
+*.d
+*.map

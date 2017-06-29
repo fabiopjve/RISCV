@@ -3,13 +3,15 @@
 #include "platform.h"
 #include "plic/plic_driver.h"
 
+void RISCV_DelayMs(uint32_t time){
+	uint64_t targetTime = ((time * 32768) / 1000) + get_timer_value();
+	while (get_timer_value() < targetTime);
+}
+
 int main()
 {
-	volatile uint64_t lastTimer = get_timer_value();
 	while (1){
-		if (get_timer_value()>(lastTimer+32768)){
-			puts("Hello World from RISC-V!\r\n");
-			lastTimer = get_timer_value();
-		}
+		printf("Hello World from RISC-V!\r\n");
+		RISCV_DelayMs(1000);
 	}
 }
