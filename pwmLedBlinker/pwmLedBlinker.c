@@ -36,7 +36,8 @@ function_ptr_t g_ext_interrupt_handlers[PLIC_NUM_INTERRUPTS];
 plic_instance_t g_plic;
 
 /*Entry Point for PLIC Interrupt Handler*/
-void handle_m_ext_interrupt(){
+void handle_m_ext_interrupt()
+{
   plic_source int_num  = PLIC_claim_interrupt(&g_plic);
   if ((int_num >=1 ) && (int_num < PLIC_NUM_INTERRUPTS)) {
     g_ext_interrupt_handlers[int_num]();
@@ -48,11 +49,13 @@ void handle_m_ext_interrupt(){
 }
 
 /*Entry Point for Machine Timer Interrupt Handler*/
-void handle_m_time_interrupt(){
+void handle_m_time_interrupt()
+{
 }
 
 // PWM1 comparator 0 interrupt handler
-void pwm1cmp0Handler(void){
+void pwm1cmp0Handler(void)
+{
 	static uint8_t direction = 0;
 	static uint16_t timer = 0;
 	uint16_t currentPWM = PWM1_REG(PWM_CMP2);	// read current PWM duty-cycle
@@ -77,7 +80,8 @@ void pwm1cmp0Handler(void){
 }
 
 
-void boardInit (){
+void boardInit ()
+{
 	clear_csr(mie, MIP_MEIP);			// disable external machine interrupts
 	clear_csr(mstatus, MSTATUS_MIE);	// disable global interrupts
 	// start of PLIC set up

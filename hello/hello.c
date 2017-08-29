@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdint.h>
 #include "platform.h"
-#include "plic/plic_driver.h"
 
-void RISCV_DelayMs(uint32_t time){
+void RISCV_DelayMs(uint32_t time)
+{
 	uint64_t targetTime = ((time * 32768) / 1000) + get_timer_value();
 	while (get_timer_value() < targetTime);
 }
