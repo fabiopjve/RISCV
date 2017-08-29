@@ -1,3 +1,14 @@
+/*
+ * hello.c
+ *
+ * Author: Fábio Pereira
+ * Date  : 2017-06-01
+ *
+ * EMBEDDEDSYSTEMS.IO
+ *
+ * This program prints out a Hello World in serial terminal
+ */
+
 #include <stdio.h>
 #include <stdint.h>
 #include "platform.h"

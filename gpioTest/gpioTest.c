@@ -1,13 +1,14 @@
 /*
+ * gpioTest.c
  *
- ============================================================================
- Name        : gpioTest.c
- Author      : Fábio Pereira
- Version     : 1
- Copyright   : None
- Description : Toggle pin 19 as fast as possible
- ============================================================================
+ * Author: Fábio Pereira
+ * Date  : 2017-06-01
+ *
+ * EMBEDDEDSYSTEMS.IO
+ *
+ * Toggle pin 19 as fast as possible
  */
+
 #include <stdio.h>
 #include "platform.h"
 #include "plic/plic_driver.h"

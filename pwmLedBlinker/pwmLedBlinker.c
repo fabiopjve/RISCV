@@ -4,6 +4,8 @@
  * Author: Fábio Pereira
  * Date  : 2017-06-01
  *
+ * EMBEDDEDSYSTEMS.IO
+ *
  * This program blinks the blue LED on HiFive board using PWM1:
  * channel 0 sets PWM period and is also used to provide periodic interrupts (200us)
  * channel 2 controls PWM duty-cycle

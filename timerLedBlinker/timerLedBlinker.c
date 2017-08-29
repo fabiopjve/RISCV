@@ -4,6 +4,8 @@
  * Author: Fábio Pereira
  * Date  : 2017-06-01
  *
+ * EMBEDDEDSYSTEMS.IO
+ *
  * This program blinks the blue LED on HiFive board using the machine timer
  * (2 interrupts per second)
  */
