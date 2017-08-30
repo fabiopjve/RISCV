@@ -4,3 +4,5 @@ Code designed for RISC-V and SiFive FE310G
 - hello - a modified version of SiFive's hello world
 - pwmLedBlinker - blinks blue LED using PWM1
 - timerLedBlinker - blinks blue LED using standard timer interrupt
+
+Check the blog: http://embeddedsystems.io
