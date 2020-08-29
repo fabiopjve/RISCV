@@ -5,3 +5,6 @@
 *.elf
 *.d
 *.map
+*.a
+.pio
+.settings
