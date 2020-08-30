@@ -83,14 +83,3 @@ void USBFS_WKUP_IRQHandler(void)
 
     exti_interrupt_flag_clear(EXTI_18);
 }
-
-/*!
-    \brief      this function handles Timer0 updata interrupt request.
-    \param[in]  none
-    \param[out] none
-    \retval     none
-*/
-void TIMER2_IRQHandler(void)
-{
-    usb_timer_irq();
-}

@@ -1,10 +1,13 @@
 /*
     This CDC ACM driver is an adaptation of GigaDevice's cdc_acm_core driver
     It includes simplified functions for sending/receiving data over USB and
-    a better/simpler API
+    a better/simpler API. It also uses RISC-V core tick timer instead of 
+    Timer 2
 
-    Modified by Fabio Pereira
+    Modified by Fábio Pereira
     www.embeddedsystems.io
+
+    Date: August, 29th, 2020
 */
 
 #include "drv_usb_hw.h"
@@ -412,7 +415,6 @@ void cdc_init(void)
     eclic_global_interrupt_enable();	
     eclic_priority_group_set(ECLIC_PRIGROUP_LEVEL2_PRIO2);
     usb_rcu_config();
-    usb_timer_init();
     usb_intr_config();
     usbd_init (&thisUSBdev, USB_CORE_ENUM_FS, &usbd_cdc_cb);
 }

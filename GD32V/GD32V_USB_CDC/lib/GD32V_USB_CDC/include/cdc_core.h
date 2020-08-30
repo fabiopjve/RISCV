@@ -1,10 +1,13 @@
 /*
     This CDC ACM driver is an adaptation of GigaDevice's cdc_acm_core driver
     It includes simplified functions for sending/receiving data over USB and
-    a better/simpler API
+    a better/simpler API. It also uses RISC-V core tick timer instead of 
+    Timer 2
 
-    Modified by Fabio Pereira
+    Modified by Fábio Pereira
     www.embeddedsystems.io
+
+    Date: August, 29th, 2020
 */
 
 #ifndef CDC_CORE_H
@@ -95,7 +98,7 @@ void cdc_init(void);
 /*
     Checks and retrieve new received data
     @param buffer - a pointer to an unit8_t buffer to store received data
-    return the number of received bytes stored in the buffer
+    @return the number of received bytes stored in the buffer
 */
 uint8_t cdc_getReceivedData(uint8_t * buffer);
 
@@ -114,7 +117,7 @@ void cdc_sendChar(char data);
 
 /*
     Checks whether CDC device is configured or not
-    Return TRUE if configured
+    @return TRUE if configured
 */
 bool cdc_isConfigured(void);
 
