@@ -32,7 +32,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
 OF SUCH DAMAGE.
 */
 
-#include "drv_usb_hw.h"
+#include "../../GD32V_systick/include/GD32V_systick.h"
 #include "drv_usb_core.h"
 #include "drv_usb_dev.h"
 
@@ -678,7 +678,7 @@ void usb_rwkup_active (usb_core_driver *udev)
             /* active remote wakeup signaling */
             udev->regs.dr->DCTL |= DCTL_RWKUP;
 
-            usb_mdelay(5);
+            GD32V_delayMs(5);
 
             udev->regs.dr->DCTL &= ~DCTL_RWKUP;
         }

@@ -33,7 +33,7 @@ OF SUCH DAMAGE.
 */
 
 #include "../Include/usbd_core.h"
-#include "../Include/drv_usb_hw.h"
+#include "../../GD32V_systick/include/GD32V_systick.h"
 
 /* endpoint type */
 const uint32_t ep_type[] = {
@@ -308,7 +308,7 @@ void  usbd_connect (usb_core_driver *udev)
 #ifndef USE_OTG_MODE
     /* connect device */
     usb_dev_connect (udev);
-    usb_mdelay(3);
+    GD32V_delayMs(3);
 
 #endif /* USE_OTG_MODE */
 }
@@ -324,6 +324,6 @@ void  usbd_disconnect (usb_core_driver *udev)
 #ifndef USE_OTG_MODE
     /* disconnect device for 3ms */
     usb_dev_disconnect (udev);
-    usb_mdelay(3);
+    GD32V_delayMs(3);
 #endif /* USE_OTG_MODE */
 }

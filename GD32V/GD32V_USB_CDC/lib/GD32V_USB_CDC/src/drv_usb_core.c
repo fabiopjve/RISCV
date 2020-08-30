@@ -33,7 +33,7 @@ OF SUCH DAMAGE.
 */
 
 #include "drv_usb_core.h"
-#include "drv_usb_hw.h"
+#include "../../GD32V_systick/include/GD32V_systick.h"
 
 /*!
     \brief      config USB core to soft reset
@@ -50,7 +50,7 @@ static void usb_core_reset (usb_core_regs *usb_regs)
     while (usb_regs->gr->GRSTCTL & GRSTCTL_CSRST);
 
     /* wait for addtional 3 PHY clocks */
-    usb_udelay(3);
+    GD32V_delayus(3);
 }
 
 /*!
@@ -204,7 +204,7 @@ usb_status usb_core_init (usb_core_basic usb_basic, usb_core_regs *usb_regs)
 
         usb_regs->gr->GCCFG = reg_value;
 
-        usb_mdelay(20);
+        GD32V_delayMs(20);
     }
 
     if (USB_USE_DMA == usb_basic.transfer_mode) {
@@ -294,7 +294,7 @@ usb_status usb_txfifo_flush (usb_core_regs *usb_regs, uint8_t fifo_num)
     while (usb_regs->gr->GRSTCTL & GRSTCTL_TXFF);
 
     /* wait for 3 PHY clocks*/
-    usb_udelay(3);
+    GD32V_delayus(3);
 
     return USB_OK;
 }
@@ -313,7 +313,7 @@ usb_status usb_rxfifo_flush (usb_core_regs *usb_regs)
     while (usb_regs->gr->GRSTCTL & GRSTCTL_RXFF);
 
     /* wait for 3 PHY clocks */
-    usb_udelay(3);
+    GD32V_delayus(3);
 
     return USB_OK;
 }

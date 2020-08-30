@@ -427,6 +427,7 @@ void cdc_process(void)
 
 void cdc_sendData(uint8_t * buffer, uint8_t size)
 {
+    while (!packet_sent);
     packet_sent = 0;
     memcpy(usb_data_buffer, buffer, size);
     usbd_ep_send(thisDevice, CDC_ACM_DATA_IN_EP, usb_data_buffer, size);
@@ -434,6 +435,7 @@ void cdc_sendData(uint8_t * buffer, uint8_t size)
 
 void cdc_sendChar(char data)
 {
+    while (!packet_sent);
     packet_sent = 0;
     usb_data_buffer[0] = data;
     usbd_ep_send(thisDevice, CDC_ACM_DATA_IN_EP, usb_data_buffer, 1);

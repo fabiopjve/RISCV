@@ -1,8 +1,14 @@
+/*
+    CDC example on GD32VF103 on Longan Nano using PlatformIO and modified
+    CDC ACM library
 
-
-
+    Author: Fábio Pereira
+    www.embeddedsystems.io
+    Date: August, 29th, 2020
+*/
 
 #include "cdc_core.h"
+#include "GD32V_systick.h"
 
 int main(void)
 {
