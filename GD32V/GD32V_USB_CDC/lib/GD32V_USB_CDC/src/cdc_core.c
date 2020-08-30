@@ -22,8 +22,8 @@ static uint32_t cdc_cmd = 0xFFU;
 uint8_t usb_data_buffer[CDC_ACM_DATA_PACKET_SIZE];
 uint8_t usb_cmd_buffer[CDC_ACM_CMD_PACKET_SIZE];
 
-__IO uint8_t packet_sent = 1U;
-__IO uint8_t receive_length = 0U;
+__IO uint8_t packetSent = 1U;
+__IO uint32_t receiveLength = 0U;
 
 usb_core_driver thisUSBdev = 
 {
@@ -307,7 +307,7 @@ uint8_t  cdc_acm_data_out_handler (usb_dev *pudev, uint8_t ep_id)
     } 
     else if ((CDC_ACM_DATA_OUT_EP & 0x7F) == ep_id) 
     {
-        receive_length = usbd_rxcount_get(pudev, CDC_ACM_DATA_OUT_EP);
+        receiveLength = usbd_rxcount_get(pudev, CDC_ACM_DATA_OUT_EP);
 
         return USBD_OK;
     }
@@ -323,7 +323,7 @@ uint8_t  cdc_acm_data_in_handler (usb_dev *pudev, uint8_t ep_id)
         if ((transc->xfer_len % transc->max_len == 0) && (transc->xfer_len != 0)) {
             usbd_ep_send (pudev, ep_id, NULL, 0U);
         } else {
-            packet_sent = 1;
+            packetSent = 1;
         }
         return USBD_OK;
     } 
@@ -419,38 +419,60 @@ void cdc_init(void)
     usbd_init (&thisUSBdev, USB_CORE_ENUM_FS, &usbd_cdc_cb);
 }
 
+/*
+    Process CDC device communication
+*/
 void cdc_process(void)
 {
-    if (packet_sent) {
+    if (packetSent) {
         // perform a receive operation to retrieve a new packet
         usbd_ep_recev(thisDevice, CDC_ACM_DATA_OUT_EP, usb_data_buffer, CDC_ACM_DATA_PACKET_SIZE);        
     }
 }
 
+/*
+    Sends data through CDC connection
+    @param buffer - a pointer to an unit8_t buffer with data to send
+    @param size - the number of bytes to send
+*/
 void cdc_sendData(uint8_t * buffer, uint8_t size)
 {
-    while (!packet_sent);
-    packet_sent = 0;
+    while (!packetSent);    // wait until all packets were sent
+    packetSent = 0;
+    if (size > CDC_ACM_DATA_PACKET_SIZE) size = CDC_ACM_DATA_PACKET_SIZE;
     memcpy(usb_data_buffer, buffer, size);
     usbd_ep_send(thisDevice, CDC_ACM_DATA_IN_EP, usb_data_buffer, size);
 }
 
+/*
+    Sends a single character through CDC connection
+    @param data - character to send
+*/
 void cdc_sendChar(char data)
 {
-    while (!packet_sent);
-    packet_sent = 0;
+    while (!packetSent);    // wait until all packets were sent
+    packetSent = 0;
     usb_data_buffer[0] = data;
     usbd_ep_send(thisDevice, CDC_ACM_DATA_IN_EP, usb_data_buffer, 1);
 }
 
-uint8_t cdc_getReceivedData(uint8_t * buffer)
+/*
+    Checks and retrieve new received data
+    @param buffer - a pointer to an unit8_t buffer to store received data
+    @param maxSize - maximum number of bytes to receive
+    @return the number of received bytes stored in the buffer
+*/
+uint32_t cdc_getReceivedData(uint8_t * buffer, uint32_t maxSize)
 {
-    uint8_t result = 0;
-    if (receive_length) {
+    uint32_t result = 0;
+    uint32_t tempSize = receiveLength;
+    if (tempSize) {
         // there is new data in the receive buffer
-        memcpy(buffer, usb_data_buffer, receive_length);
-        result = receive_length;
-        receive_length = 0;
+        // we will limit the number or received characters to maxSize
+        if (receiveLength > maxSize) tempSize = maxSize;
+        memcpy(buffer, usb_data_buffer, tempSize);
+        result = tempSize;
+        receiveLength -= tempSize;
     }   
     return result;
 }

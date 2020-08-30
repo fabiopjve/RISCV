@@ -96,11 +96,17 @@ extern usb_descriptor_configuration_set_struct configuration_descriptor;
 void cdc_init(void);
 
 /*
+    Process CDC device communication
+*/
+void cdc_process(void);
+
+/*
     Checks and retrieve new received data
     @param buffer - a pointer to an unit8_t buffer to store received data
+    @param maxSize - maximum number of bytes to receive
     @return the number of received bytes stored in the buffer
 */
-uint8_t cdc_getReceivedData(uint8_t * buffer);
+uint32_t cdc_getReceivedData(uint8_t * buffer, uint32_t maxSize);
 
 /*
     Sends data through CDC connection
