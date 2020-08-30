@@ -8,5 +8,6 @@ SiFive FE310G:
 - timerLedBlinker - blinks blue LED using standard timer interrupt
 
 GigaDevices GD32V:
+- GD32V_USB_CDC - a modified and improved version of GigaDevice's CDC ACM driver
 
 Check the blog: https://embeddedsystems.io
